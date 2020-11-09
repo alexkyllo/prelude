@@ -1,5 +1,5 @@
 ;; additional packages
-(prelude-require-packages '(ess julia-mode julia-snail flycheck-julia neotree conda blacken))
+(prelude-require-packages '(ess julia-mode julia-snail flycheck-julia neotree conda blacken poetry))
 
 ;; neotree icons setup
 (global-set-key [f8] 'neotree-toggle)
@@ -7,6 +7,12 @@
 
 ;; keybindings
 (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
+
+;; turn off flyspell
+(setq prelude-flyspell nil)
+
+;; turn off scrollbar
+(set-scroll-bar-mode nil)
 
 ;; conda
 (require 'conda)
