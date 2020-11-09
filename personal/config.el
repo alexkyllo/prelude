@@ -1,5 +1,7 @@
 ;; additional packages
-(prelude-require-packages '(ess julia-mode julia-snail flycheck-julia neotree conda blacken poetry))
+(prelude-require-packages
+ '(ess julia-mode julia-snail flycheck-julia
+       neotree conda blacken poetry org-journal))
 
 ;; neotree icons setup
 (global-set-key [f8] 'neotree-toggle)
