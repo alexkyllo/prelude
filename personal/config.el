@@ -1,7 +1,7 @@
 ;; additional packages
 (prelude-require-packages
  '(ess julia-mode julia-snail flycheck-julia
-       neotree conda blacken poetry org-journal))
+       neotree all-the-icons conda blacken poetry org-journal))
 
 ;; neotree icons setup
 (global-set-key [f8] 'neotree-toggle)
@@ -28,4 +28,4 @@
 ;; if you want eshell support, include:
 (conda-env-initialize-eshell)
 ;; if you want auto-activation (see below for details), include:
-(conda-env-autoactivate-mode t)
+;;(conda-env-autoactivate-mode t)
