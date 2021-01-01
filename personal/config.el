@@ -2,7 +2,7 @@
 (prelude-require-packages
  '(ess julia-mode julia-snail flycheck-julia
        neotree all-the-icons conda blacken poetry
-       org-journal cuda-mode))
+       org-journal cuda-mode pipenv markdown-mode poly-markdown poly-R))
 
 ;; neotree icons setup
 (global-set-key [f8] 'neotree-toggle)
@@ -30,3 +30,13 @@
 (conda-env-initialize-eshell)
 ;; if you want auto-activation (see below for details), include:
 ;;(conda-env-autoactivate-mode t)
+(exec-path-from-shell-copy-envs '("WORKON_HOME"))
+
+(add-hook 'find-file-hook 'my-r-style-hook)
+(defun my-r-style-hook ()
+  (when (string-match (file-name-extension buffer-file-name) "[r|R]$")
+    (ess-set-style 'RStudio)))
+
+(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+
+(global-prettify-symbols-mode 1)
